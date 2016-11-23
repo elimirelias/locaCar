@@ -1,0 +1,44 @@
+﻿[
+    {
+        "locacao": {
+            "loja": "SouthCar",
+            "ValorSemanalRegular": 210,
+            "ValorSemanalFidelidade": 150,
+            "ValorFDSRegular": 200,
+            "ValorFDSFidelidade": 90
+        },
+        "tipoCarro": "Compacto",
+        "qteMaxPessoas": "4",
+        "modelo": "Gol",
+        "dataIniDisponivel": "2009-01-01",
+        "dataFimDisponivel": "2009-01-03"
+    },
+    {
+        "locacao": {
+            "loja": "WestCar",
+            "ValorSemanalRegular": 530,
+            "ValorSemanalFidelidade": 150,
+            "ValorFDSRegular": 200,
+            "ValorFDSFidelidade": 90
+        },
+        "tipoCarro": "Esportivo",
+        "qteMaxPessoas": "2",
+        "modelo": "Ferrari",
+        "dataIniDisponivel": "2009-03-16",
+        "dataFimDisponivel": "2009-03-18"
+    },
+    {
+        "locacao": {
+            "loja": "NorthCar",
+            "ValorSemanalRegular": 630,
+            "ValorSemanalFidelidade": 580,
+            "ValorFDSRegular": 600,
+            "ValorFDSFidelidade": 590
+        },
+        "tipoCarro": "SUV",
+        "qteMaxPessoas": "7",
+        "modelo": "Navigator",
+        "dataIniDisponivel": "2009-09-01",
+        "dataFimDisponivel": "2009-09-03"
+    }
+]

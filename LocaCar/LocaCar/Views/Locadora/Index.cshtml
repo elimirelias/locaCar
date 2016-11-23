@@ -1,0 +1,52 @@
+﻿@model LocaCar.Models.LocadoraViewModel
+@{
+    ViewBag.Title = "Locadora de Carros";
+}
+
+<h2>Carro(s) disponível(eis)</h2>
+<table class="table">
+    <tr>
+        <td>Cartão fidelidade: @Html.LabelForModel(Model.temCartao ? "Sim" : "Não")</td>
+    </tr>
+    <tr>
+        <td>Valor da Diária: @Html.LabelForModel(Model.ValorDiaria.ToString())</td>
+    </tr>
+    <tr>
+        <td>Quantidade de Pessoas: @Html.LabelForModel(Model.qtePessoas.ToString())</td>
+    </tr>
+    <tr>
+        <td>Data: @Html.LabelForModel(string.Format("{0} ({1}) - {2} ({3})", Model.DataIni.ToShortDateString(), Model.DataIni.DayOfWeek.ToString(), Model.DataFim.ToShortDateString(), Model.DataFim.DayOfWeek.ToString()))</td>
+    </tr>
+    <tr><td><br/></td></tr>
+    <tr>
+        <th>
+            Carro
+        </th>
+        <th>
+            Locadora
+        </th>
+    </tr>
+    
+    @if(Model.locadoras.Count() > 0) {
+    
+        foreach (var item in Model.locadoras)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => item.modelo):
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.locacao.loja)
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td>
+                Nenhum carro disponível com esses filtros!
+            </td>
+        </tr>
+    }
+</table>

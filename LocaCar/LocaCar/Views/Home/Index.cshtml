@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Locadora de Veículos</title>
+</head>
+<body>
+    <h1>Locadora de Veículos</h1>
+    <h3>Preencha os filtros para verificar as locações disponíveis</h3>
+    @using (Html.BeginForm("Index", "Locadora", FormMethod.Post))
+    {
+        <div>
+            Quantidade de Pessoas: 
+            @Html.TextBox("qtePessoas")
+        </div>
+        <div>
+            Data de Início:
+            @Html.TextBox("dataIni", null, new { placeholder = "dd/mm/yyyy" })
+            &nbsp;(dd/mm/yyyy)
+        </div>
+        <div>
+            Data Final:
+            @Html.TextBox("dataFim", null, new { placeholder = "dd/mm/yyyy" })
+            &nbsp;(dd/mm/yyyy)
+        </div>
+        <div>
+            Tem cartão fidelidade?
+            @Html.RadioButton("temCartao", "true", true) Sim
+            @Html.RadioButton("temCartao", "false", false) Não
+        </div>
+        <br />
+        <div>
+            <input type="submit" name="command" value="Pesquisar" />
+        </div>
+    }
+    <div>
+        <h3> Problema de reservas de carros</h3>
+          Uma locadora de carros deseja oferecer serviços de reserva de carros na internet. Ela têm
+          <br/> três lojas SouthCar, WestCar, NorthCar. Cada locadora possui suas taxas separadas para dias
+          <br/> da semana e finais de semana. Há preços especiais para cliente cartão fidelidade. Cada
+          <br/> locadora tem uma Categoria de carros atribuída.
+        <br/>
+          <br/> ● SouthCar disponibiliza carros compactos tem taxas de segunda a sexta como R$ 210/dia
+          <br/> para cliente regular e R$ 150/dia para clientes cartão fidelidade. As taxas de fim de semana
+          <br/> são R$200/dia para cliente regular e R$ 90/dia para um cliente cartão fidelidade.
+        <br />
+          <br/> ● WestCar disponibiliza carros esportivos tem taxas de segunda a sexta como R$ 530/dia
+          <br/> para cliente regular e R$ 150/dia para clientes cartão fidelidade. As taxas de fim de semana
+          <br/> são R$200/dia para cliente regular e R$ 90/dia para um cliente cartão fidelidade.
+        <br />
+          <br/> ● NorthCar disponibiliza SUV’s tem taxas de segunda a sexta como R$ 630/dia para cliente
+          <br/> regular e R$ 580/dia para clientes cartão fidelidade. As taxas de fim de semana são
+          <br/> R$600/dia para cliente regular e R$ 590/dia para um cliente cartão fidelidade.
+          <br/> Para carros compactos o limite de pessoas é 4, para carros esportivos, o limite é 2 e para
+          <br/> suv’s é 7.
+        <br />
+          <br/> Escreva um programa para ajudar um cliente on-line encontrar o um carro mais barato de
+          <br/> acordo com a quantidade de pessoas para o carro.
+          <br/> A entrada para o programa será um intervalo de datas para um cliente regular e a
+          <br/> quantidade de passageiros desejada. A saída deve ser o carro mais barato disponível.
+          <br /> 
+          <br/> A introdução do formato:
+          <br/> < tipo_carro>:< quantidade_passageiros> : < data1> , < DATA2>, < DATA3>, ...
+          <br/>             FORMATO DE SAÍDA:
+          <br/>             < carros_disponiveis:locadora>
+          <br/>                 INPUT 1:
+          <br/>                 Normal: 1: 16Mar2009 (seg), 17Mar2009 (ter), 18Mar2009 (qua)
+          <br/>                 OUTPUT 1:
+          <br/>                 FERRARI: WestCar
+          <br/>
+          <br/>                 INPUT 2:
+          <br/>                 Premium: 6: 01Set2009 (sab), 02Set2009 (dom)
+          <br/>                 OUTPUT 2:
+          <br/>                 NAVIGATOR: NorthCar
+        <br/>
+        <br />
+    </div>
+</body>
+</html>
