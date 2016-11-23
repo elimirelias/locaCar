@@ -33,6 +33,7 @@ namespace LocaCar.Controllers
 
             var model = new LocadoraViewModel();
             model.temCartao = temCartao;
+            model.locadora = new Locadora();
             model.locadora.qteMaxPessoas = qtePessoas;
             model.locadora.dataIniDisponivel = dataIni;
             model.locadora.dataFimDisponivel = dataFim;
