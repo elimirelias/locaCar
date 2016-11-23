@@ -9,7 +9,6 @@ namespace LocaCar.Model
     public class Locadora
     {
         public Locacao locacao { get; set; }
-        public string loja { get; set; }
         public string tipoCarro { get; set; }
         public int qteMaxPessoas { get; set; }
         public string modelo { get; set; }

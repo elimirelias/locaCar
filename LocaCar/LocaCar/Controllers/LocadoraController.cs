@@ -27,13 +27,15 @@ namespace LocaCar.Controllers
             }
 
             //Carros disponíveis nas datas
-            locadoras = locadoras.Where(x => qtePessoas <= x.qteMaxPessoas && (x.dataIniDisponivel >= dataIni && x.dataFimDisponivel <= dataFim)).ToList();
+            locadoras = locadoras.Where(x => qtePessoas <= x.qteMaxPessoas && (x.dataIniDisponivel >= dataIni && x.dataFimDisponivel <= dataFim))
+                                 .OrderByDescending(x => x.locacao.ValorSemanalFidelidade)
+                                 .ToList();
 
             var model = new LocadoraViewModel();
             model.temCartao = temCartao;
-            model.qtePessoas = qtePessoas;
-            model.DataIni = dataIni;
-            model.DataFim = dataFim;
+            model.locadora.qteMaxPessoas = qtePessoas;
+            model.locadora.dataIniDisponivel = dataIni;
+            model.locadora.dataFimDisponivel = dataFim;
             model.locadoras = locadoras;
 
             if (locadoras.Count > 0) 
@@ -42,16 +44,16 @@ namespace LocaCar.Controllers
                 if (day == 0 && day == 6) //sunday e saturday
                 {
                     if (temCartao)
-                        model.ValorDiaria = locadoras[0].locacao.ValorFDSFidelidade;
+                        model.valorDiaria = locadoras[0].locacao.ValorFDSFidelidade;
                     else
-                        model.ValorDiaria = locadoras[0].locacao.ValorFDSRegular;
+                        model.valorDiaria = locadoras[0].locacao.ValorFDSRegular;
                 }
                 else
                 {
                     if (temCartao)
-                        model.ValorDiaria = locadoras[0].locacao.ValorSemanalFidelidade;
+                        model.valorDiaria = locadoras[0].locacao.ValorSemanalFidelidade;
                     else
-                        model.ValorDiaria = locadoras[0].locacao.ValorSemanalRegular;
+                        model.valorDiaria = locadoras[0].locacao.ValorSemanalRegular;
                 }
             }
 

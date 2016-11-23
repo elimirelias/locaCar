@@ -8,10 +8,8 @@ namespace LocaCar.Models
 {
     public class LocadoraViewModel
     {
-        public DateTime DataIni { get; set; }
-        public DateTime DataFim { get; set; }
-        public int qtePessoas { get; set; }
-        public decimal ValorDiaria { get; set; }
+        public Locadora locadora { get; set; }
+        public decimal valorDiaria { get; set; }
         public bool temCartao { get; set; }
 
         public IEnumerable<Locadora> locadoras { get; set; }
