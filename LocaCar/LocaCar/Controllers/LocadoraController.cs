@@ -28,7 +28,7 @@ namespace LocaCar.Controllers
 
             //Carros disponíveis nas datas
             locadoras = locadoras.Where(x => qtePessoas <= x.qteMaxPessoas && (x.dataIniDisponivel >= dataIni && x.dataFimDisponivel <= dataFim))
-                                 .OrderByDescending(x => x.locacao.ValorSemanalFidelidade)
+                                 .OrderBy(x => x.locacao.ValorSemanalFidelidade)
                                  .ToList();
 
             var model = new LocadoraViewModel();
