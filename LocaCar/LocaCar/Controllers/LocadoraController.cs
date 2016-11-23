@@ -39,7 +39,7 @@ namespace LocaCar.Controllers
             if (locadoras.Count > 0) 
             { 
                 int day = (int)dataIni.DayOfWeek;
-                if (day == 0 && day == 7)
+                if (day == 0 && day == 6)
                 {
                     if (temCartao)
                         model.ValorDiaria = locadoras[0].locacao.ValorSemanalFidelidade;
