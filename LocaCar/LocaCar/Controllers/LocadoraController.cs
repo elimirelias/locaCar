@@ -27,7 +27,7 @@ namespace LocaCar.Controllers
             }
 
             //Carros disponíveis nas datas
-            locadoras = locadoras.Where(x => x.qteMaxPessoas <= qtePessoas && (x.dataIniDisponivel >= dataIni && x.dataFimDisponivel <= dataFim)).ToList();
+            locadoras = locadoras.Where(x => qtePessoas <= x.qteMaxPessoas && (x.dataIniDisponivel >= dataIni && x.dataFimDisponivel <= dataFim)).ToList();
 
             var model = new LocadoraViewModel();
             model.temCartao = temCartao;
