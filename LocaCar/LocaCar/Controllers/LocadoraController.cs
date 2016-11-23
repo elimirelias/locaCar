@@ -39,19 +39,19 @@ namespace LocaCar.Controllers
             if (locadoras.Count > 0) 
             { 
                 int day = (int)dataIni.DayOfWeek;
-                if (day == 0 && day == 6)
-                {
-                    if (temCartao)
-                        model.ValorDiaria = locadoras[0].locacao.ValorSemanalFidelidade;
-                    else
-                        model.ValorDiaria = locadoras[0].locacao.ValorSemanalRegular;
-                }
-                else
+                if (day == 0 && day == 6) //sunday e saturday
                 {
                     if (temCartao)
                         model.ValorDiaria = locadoras[0].locacao.ValorFDSFidelidade;
                     else
                         model.ValorDiaria = locadoras[0].locacao.ValorFDSRegular;
+                }
+                else
+                {
+                    if (temCartao)
+                        model.ValorDiaria = locadoras[0].locacao.ValorSemanalFidelidade;
+                    else
+                        model.ValorDiaria = locadoras[0].locacao.ValorSemanalRegular;
                 }
             }
 
