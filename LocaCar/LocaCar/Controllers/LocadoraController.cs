@@ -41,7 +41,7 @@ namespace LocaCar.Controllers
             model.dataFimDisponivel = dataFim;
             model.locadoras = locadoras;
             if(locadoras.Count > 0) // Locação mais barata
-                model.valorDiaria = locadoras.Min(x => x.locacao.ValorMenorDiaria);
+                model.valorDiaria = locadoras.Min(x => x.locacao.ValorDiaria);
 
             return View(model);
         }

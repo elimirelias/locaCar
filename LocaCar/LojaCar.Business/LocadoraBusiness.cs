@@ -17,7 +17,7 @@ namespace LocaCar.Business
 
         public Locacao SetLocacao(Locacao locacao, DateTime data, bool temCartao)
         {
-            //Seleciona a loja
+            //Seleciona classe da locacao
             switch (locacao.loja) {
                 case "WestCar": 
                     _locacaoStrategy = new WestCar(); 
@@ -31,7 +31,7 @@ namespace LocaCar.Business
             }
 
             locacao = _locacaoStrategy.GetLocacao(locacao);
-            locacao.ValorMenorDiaria = this.valorDiaria(locacao, data, temCartao);
+            locacao.ValorDiaria = this.valorDiaria(locacao, data, temCartao);
 
             return locacao;
         }
