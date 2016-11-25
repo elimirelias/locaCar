@@ -20,43 +20,27 @@ namespace LocaCar.Controllers
 
             //Lê json e monta o Model com os dados
             List<Locadora> locadoras;
-            using (StreamReader r = new StreamReader(file))
-            {
+            using (StreamReader r = new StreamReader(file)) {
                 string json = r.ReadToEnd();
                 locadoras = JsonConvert.DeserializeObject<List<Locadora>>(json);
             }
 
-            //Carros disponíveis nas datas
-            locadoras = locadoras.Where(x => qtePessoas <= x.qteMaxPessoas && (x.dataIniDisponivel >= dataIni && x.dataFimDisponivel <= dataFim))
-                                 .OrderBy(x => x.locacao.ValorSemanalFidelidade)
-                                 .ToList();
+            //Preenche as locações com os valores correspondentes de cada loja
+            locadoras.ForEach(x => { x.locacao = (Locacao)new Locar().SetLocacao(x.locacao, dataIni, temCartao); });
+
+            //Seleciona apenas os Veículos com capacidade de pessoas e disponíveis nas datas (com overlaps)
+            locadoras = locadoras.Where(x => x.qteMaxPessoas >= qtePessoas && (x.dataIniDisponivel <= dataFim && x.dataFimDisponivel >= dataIni))
+                        .OrderBy(x => x.locacao.ValorSemanalRegular) //Orderna pela locacao mais barata
+                        .ToList();
 
             var model = new LocadoraViewModel();
             model.temCartao = temCartao;
-            model.locadora = new Locadora();
-            model.locadora.qteMaxPessoas = qtePessoas;
-            model.locadora.dataIniDisponivel = dataIni;
-            model.locadora.dataFimDisponivel = dataFim;
+            model.qtePessoas = qtePessoas;
+            model.dataIniDisponivel = dataIni;
+            model.dataFimDisponivel = dataFim;
             model.locadoras = locadoras;
-
-            if (locadoras.Count > 0) 
-            { 
-                int day = (int)dataIni.DayOfWeek;
-                if (day == 0 && day == 6) //sunday e saturday
-                {
-                    if (temCartao)
-                        model.valorDiaria = locadoras[0].locacao.ValorFDSFidelidade;
-                    else
-                        model.valorDiaria = locadoras[0].locacao.ValorFDSRegular;
-                }
-                else
-                {
-                    if (temCartao)
-                        model.valorDiaria = locadoras[0].locacao.ValorSemanalFidelidade;
-                    else
-                        model.valorDiaria = locadoras[0].locacao.ValorSemanalRegular;
-                }
-            }
+            if(locadoras.Count > 0) // Locação mais barata
+                model.valorDiaria = locadoras.Min(x => x.locacao.ValorMenorDiaria);
 
             return View(model);
         }

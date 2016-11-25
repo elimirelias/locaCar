@@ -1,11 +1,7 @@
 ﻿[
     {
         "locacao": {
-            "loja": "SouthCar",
-            "ValorSemanalRegular": 210,
-            "ValorSemanalFidelidade": 150,
-            "ValorFDSRegular": 200,
-            "ValorFDSFidelidade": 90
+            "loja": "SouthCar"
         },
         "tipoCarro": "Compacto",
         "qteMaxPessoas": "4",
@@ -15,11 +11,7 @@
     },
     {
         "locacao": {
-            "loja": "WestCar",
-            "ValorSemanalRegular": 530,
-            "ValorSemanalFidelidade": 150,
-            "ValorFDSRegular": 200,
-            "ValorFDSFidelidade": 90
+            "loja": "WestCar"
         },
         "tipoCarro": "Esportivo",
         "qteMaxPessoas": "2",
@@ -29,11 +21,7 @@
     },
     {
         "locacao": {
-            "loja": "NorthCar",
-            "ValorSemanalRegular": 630,
-            "ValorSemanalFidelidade": 580,
-            "ValorFDSRegular": 600,
-            "ValorFDSFidelidade": 590
+            "loja": "NorthCar"
         },
         "tipoCarro": "SUV",
         "qteMaxPessoas": "7",

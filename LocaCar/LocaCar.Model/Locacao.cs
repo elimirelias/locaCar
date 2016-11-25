@@ -13,5 +13,6 @@ namespace LocaCar.Model
         public Decimal ValorSemanalFidelidade { get; set; }
         public Decimal ValorFDSRegular { get; set; }
         public Decimal ValorFDSFidelidade { get; set; }
+        public Decimal ValorMenorDiaria { get; set; }
     }
 }

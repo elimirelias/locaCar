@@ -6,16 +6,16 @@
 <h2>Carro(s) disponível(eis)</h2>
 <table class="table">
     <tr>
+        <td>Quantidade de Pessoas: @Html.LabelForModel(Model.qtePessoas.ToString())</td>
+    </tr>
+    <tr>
+        <td>Data: @Html.LabelForModel(string.Format("{0} ({1}) - {2} ({3})", Model.dataIniDisponivel.ToShortDateString(), Model.dataIniDisponivel.DayOfWeek.ToString(), Model.dataFimDisponivel.ToShortDateString(), Model.dataFimDisponivel.DayOfWeek.ToString()))</td>
+    </tr>
+    <tr>
         <td>Cartão fidelidade: @Html.LabelForModel(Model.temCartao ? "Sim" : "Não")</td>
     </tr>
     <tr>
-        <td>Valor da Diária: @Html.LabelForModel(Model.valorDiaria.ToString())</td>
-    </tr>
-    <tr>
-        <td>Quantidade de Pessoas: @Html.LabelForModel(Model.locadora.qteMaxPessoas.ToString())</td>
-    </tr>
-    <tr>
-        <td>Data: @Html.LabelForModel(string.Format("{0} ({1}) - {2} ({3})", Model.locadora.dataIniDisponivel.ToShortDateString(), Model.locadora.dataIniDisponivel.DayOfWeek.ToString(), Model.locadora.dataFimDisponivel.ToShortDateString(), Model.locadora.dataFimDisponivel.DayOfWeek.ToString()))</td>
+        <td>Valor da Diária mais barata: <b>@Html.LabelForModel(Model.valorDiaria.ToString())</b></td>
     </tr>
     <tr><td><br/></td></tr>
     <tr>
