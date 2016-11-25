@@ -1,4 +1,5 @@
-﻿using LocaCar.Model;
+﻿using LocaCar.Business;
+using LocaCar.Model;
 using LocaCar.Models;
 using Newtonsoft.Json;
 using System;
@@ -26,7 +27,7 @@ namespace LocaCar.Controllers
             }
 
             //Preenche as locações com os valores correspondentes de cada loja
-            locadoras.ForEach(x => { x.locacao = (Locacao)new Locar().SetLocacao(x.locacao, dataIni, temCartao); });
+            locadoras.ForEach(x => { x.locacao = (Locacao)new LocadoraBusiness().SetLocacao(x.locacao, dataIni, temCartao); });
 
             //Seleciona apenas os Veículos com capacidade de pessoas e disponíveis nas datas (com overlaps)
             locadoras = locadoras.Where(x => x.qteMaxPessoas >= qtePessoas && (x.dataIniDisponivel <= dataFim && x.dataFimDisponivel >= dataIni))

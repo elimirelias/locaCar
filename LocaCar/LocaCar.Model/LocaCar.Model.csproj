@@ -40,8 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Locacao.cs" />
-    <Compile Include="Lojas.cs" />
     <Compile Include="Locadora.cs" />
+    <Compile Include="LocacaoStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

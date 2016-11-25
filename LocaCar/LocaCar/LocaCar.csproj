@@ -147,6 +147,10 @@
       <Project>{7c3d6ecf-5e64-49d3-bd81-378342f5a85a}</Project>
       <Name>LocaCar.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LojaCar.Business\LojaCar.Business.csproj">
+      <Project>{3acdbc12-db25-4de9-b497-86929d90bfc6}</Project>
+      <Name>LojaCar.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocaCar", "LocaCar\LocaCar.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocaCar.Model", "LocaCar.Model\LocaCar.Model.csproj", "{7C3D6ECF-5E64-49D3-BD81-378342F5A85A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaCar.Business", "LojaCar.Business\LojaCar.Business.csproj", "{3ACDBC12-DB25-4DE9-B497-86929D90BFC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7C3D6ECF-5E64-49D3-BD81-378342F5A85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C3D6ECF-5E64-49D3-BD81-378342F5A85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C3D6ECF-5E64-49D3-BD81-378342F5A85A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ACDBC12-DB25-4DE9-B497-86929D90BFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ACDBC12-DB25-4DE9-B497-86929D90BFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ACDBC12-DB25-4DE9-B497-86929D90BFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ACDBC12-DB25-4DE9-B497-86929D90BFC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
