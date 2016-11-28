@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="Locacao.cs" />
     <Compile Include="Locadora.cs" />
-    <Compile Include="LocacaoStrategy.cs" />
+    <Compile Include="ILocacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

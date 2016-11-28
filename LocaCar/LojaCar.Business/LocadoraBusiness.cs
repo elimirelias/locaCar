@@ -9,28 +9,11 @@ namespace LocaCar.Business
 {
     public class LocadoraBusiness
     {
-        private LocacaoStrategy _locacaoStrategy;
-
-        public void SetLoja(LocacaoStrategy locacaoStrategy) {
-            _locacaoStrategy = locacaoStrategy;
-        }
-
         public Locacao SetLocacao(Locacao locacao, DateTime data, bool temCartao)
         {
-            //Seleciona classe da locacao
-            switch (locacao.loja) {
-                case "WestCar": 
-                    _locacaoStrategy = new WestCar(); 
-                    break;
-                case "SouthCar": 
-                    _locacaoStrategy = new SouthCar(); 
-                    break;
-                default: 
-                    _locacaoStrategy = new NorthCar(); 
-                    break;
-            }
-
-            locacao = _locacaoStrategy.GetLocacao(locacao);
+            //Usa o Design Pattern Chain of Responsability (Cadeia de responsabilidades)
+            ILocacao westcar = new WestCar();
+            locacao = westcar.GetLocacao(locacao);
             locacao.ValorDiaria = this.valorDiaria(locacao, data, temCartao);
 
             return locacao;
